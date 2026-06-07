@@ -1,7 +1,4 @@
 :root {
-    --mobile-container: 342px;
-    --tablet-container: 696px;
-    --desktop-container: 1390px;
     --blue: #4F8FF0;
     --black: #010101;
     --white: #E6E6E6;
@@ -20,33 +17,38 @@
 
 .container {
     width: 100%;
-    max-width: var(--mobile-container);
-    margin: 0 auto;
+    max-width: 1390px;      /* твоя максимальная ширина с десктопа */
+    margin-inline: auto;    /* центрирование (современный аналог margin: 0 auto) */
+    padding-inline: 1rem;
 }
 
 header {
     display: flex;
     flex-direction: column;
-    width: 100%;
     position: fixed;
+    width: 100%;    /* твоя максимальная ширина с десктопа */
+    margin-inline: auto;    /* центрирование (современный аналог margin: 0 auto) */
 }
 
 .wrapper-head-first {
-    max-width: var(--mobile-container);
+    width: 100%;
+    max-width: 1390px;      /* твоя максимальная ширина с десктопа */
+    margin-inline: auto;    /* центрирование (современный аналог margin: 0 auto) */
     display: flex;
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1rem 1rem;
 }
 
 .wrapper-head-second {
-    max-width: var(--mobile-container);
+    width: 100%;
+    max-width: 1390px;      /* твоя максимальная ширина с десктопа */
+    margin-inline: auto;    /* центрирование (современный аналог margin: 0 auto) */
     display: flex;
-    margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    padding: 1.25rem 0;
+    padding: 1.25rem 1rem 1.25rem 1rem;
 }
 
 .header_first-line {
@@ -311,9 +313,277 @@ h2 {
     width: 100%;
 }
 
+.team {
+    background: #F7F7F7;
+    padding: 2.5rem 0;
+}
+
+.team .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.team_member {
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0rem;
+}
+
+.team_members {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+h4 {
+    font-weight: 700;
+    line-height: 120%;
+    font-size: 1rem;
+    color: #222222;
+}
+
+.team_member-image img {
+    width: 100%;
+}
+
+.team_member-image {
+    height: 235px;
+}
+
+.team_member-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem 1rem;
+    background: #FFFFFF;
+    width: 100%;
+    text-align: center;
+    gap: 0.625rem;
+}
+
+.team_member-text h4, .small-text {
+    width: 100%;
+}
+
+.blog {
+    padding: 2.5rem 0;
+}
+
+.blog .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.blog_content {
+    display: flex;
+    width: 100%;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.blog_content-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: start;
+    min-width: 250px;
+}
+
+.blog_item-image {
+    display: flex;
+    width: 100%;
+}
+
+.blog_item-image img {
+    width: 100%;
+    height: auto;
+}
+
+.date-text {
+    font-weight: 300;
+    line-height: 120%;
+    font-size: 0.75rem;
+}
+
+footer {
+    background: #222222;
+    padding: 2.5rem 0;
+    color: white;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+.gray-line {
+    height: 1px;
+    background: #8C8C8C;
+    width: 100%;
+}
+
+.footer_info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    height: 100%;
+}
+
+.footer_info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    bottom: 2rem;
+}
+
+.footer_info-icon {
+    padding: 0.625rem;
+    background: #2C2C2C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog_content-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.reviews {
+    padding: 2.5rem 0;
+    background-image: url(./images/RevBG.png);
+    background-position: bottom;
+    background-size: cover;
+}
+
+.reviews .heading {
+    align-items: flex-start;
+}
+
+.reviews_comments {
+    display: flex;
+    width: 100%;
+    gap: 1.5rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+.reviews_comment {
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #FFFFFF;
+}
+
+.reviews_comment-head {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.review_avatar-wrapper {
+    width: 50px;
+    height: 50px;
+    display: flex;
+}
+
+.review_comment-name {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.reviews .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.underfooter {
+    background: #181818;
+    text-align: center;
+    color: white;
+}
+
+.underfooter .container {
+    padding: 1rem 0;
+}
+
+.underfooter a {
+    color: white;
+}
+
+.footer_main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.footer_user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.footer_user-head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+}
+
+.footer_nav {
+    display: none;
+}
+
+.footer_link {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    color: white;
+    line-height: 120%;
+    font-weight: 700;
+}
+
 @media (min-width: 1024px) {
-    .container {
-        max-width: var(--tablet-container);
+    .footer_main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem
+    }
+    
+    .underfooter .container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .underfooter .small-text {
+        width: auto;
     }
 
     .about-us_buttons {
@@ -322,18 +592,24 @@ h2 {
     }
 
     .wrapper-head-first {
-        max-width: var(--tablet-container);
+        width: 100%;
+        max-width: 1390px;      /* твоя максимальная ширина с десктопа */
+        margin-inline: auto;    /* центрирование (современный аналог margin: 0 auto) */
+        padding-inline: 1rem;
     }
 
     .wrapper-head-second {
-        max-width: var(--tablet-container);
+        width: 100%;
+        max-width: 1390px;      /* твоя максимальная ширина с десктопа */
+        margin-inline: auto;    /* центрирование (современный аналог margin: 0 auto) */
+        padding-inline: 1rem;
     }
 
     .header_mail {
         display: flex;
     }
 
-    .hero-content {
+    .hero_content {
         gap: 2.875rem;
     }
 
@@ -357,8 +633,26 @@ h2 {
 }
 
 @media (min-width: 1400px) {
-    .container {
-        max-width: var(--desktop-container);
+    .header_first-line {
+        width: 100%;
+    }
+
+    .header_second-line {
+        width: 100%;
+    }
+
+    .services_cards {
+        overflow: hidden;
+    }
+    
+    .footer_nav {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer_main-content {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .about-us_content img {
@@ -367,7 +661,10 @@ h2 {
     }
 
     .wrapper-head-first {
-        max-width: var(--desktop-container);
+        width: 100%;
+        max-width: 1390px;      /* твоя максимальная ширина с десктопа */
+        margin-inline: auto;    /* центрирование (современный аналог margin: 0 auto) */
+        padding-inline: 1rem;
     }
 
     .about-us_content {
@@ -376,7 +673,10 @@ h2 {
     }
 
     .wrapper-head-second {
-        max-width: var(--desktop-container);
+        width: 100%;
+        max-width: 1390px;      /* твоя максимальная ширина с десктопа */
+        margin-inline: auto;    /* центрирование (современный аналог margin: 0 auto) */
+        padding-inline: 1rem;
     }
 
     .header_burger-menu {
@@ -397,5 +697,10 @@ h2 {
 
     nav {
         display: flex;
+    }
+
+    .team_members {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
