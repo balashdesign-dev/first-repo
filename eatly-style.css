@@ -1,5 +1,6 @@
 :root {
     --purple: #6C5FBC;
+    --low-purple: #DBD9EE;
     --background-color: #F9F9F9;
     --text-color: #201F1F;
     --base-white: #FFFFFF;
@@ -12,6 +13,7 @@
     --low-green: #D6EEE0;
     --line-color: #CBCBCB;
     --footer-color: #EAEAEA;
+    --dark-blue: #323142;
 }
 
 * {
@@ -21,6 +23,10 @@
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+}
+
+body {
+    background: var(--background-color);
 }
 
 /* Container */
@@ -33,6 +39,7 @@
 }
 
 .purple-text {
+    font-family: "Nunito", sans-serif;
     color: var(--purple);
 }
 
@@ -300,6 +307,7 @@ nav {
 }
 
 .application_text {
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -359,6 +367,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    text-align: center;
     gap: 3.75rem;
 }
 
@@ -372,6 +381,7 @@ nav {
 
 .place {
     display: flex;
+    position: relative;
     flex-direction: column;
     gap: 0;
     overflow: hidden;
@@ -389,6 +399,7 @@ nav {
 }
 
 .place_text {
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -425,4 +436,188 @@ nav {
     width: 100%;
     display: flex;
     justify-content: flex-end;
+}
+
+.heading_3 {
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.place_rate {
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    gap: .25rem;
+}
+
+.rate_text {
+    color: var(--gray);
+    font-weight: 300;
+    line-height: 120%;
+    font-size: .875rem;
+}
+
+.no-border-button {
+    color: var(--gray);
+    background: none;
+    border-radius: .625rem;
+    border: none;
+    padding: .875rem 1.5rem;
+    font-weight: 500;
+    font-size: .75rem;
+    text-transform: capitalize;
+    letter-spacing: .13px;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.tab {
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    background: var(--low-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 1.5rem;
+    bottom: 1rem;
+}
+
+/* Dishes */
+
+.dishes {
+    background: var(--background-color);
+    padding: 2.25rem 0;
+}
+
+.dishes_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.75rem;
+}
+
+.dishes_catalog {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.catalog_meal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 9rem .875rem 1.25rem .875rem;
+    background: var(--base-white);
+    border-radius: 1.25rem;
+}
+
+.catalog_meal:last-child {
+    display: none;
+}
+
+.meal_label {
+    display: flex;
+    align-items: center;
+    border-radius: .25rem;
+    padding: .125rem .375rem;
+}
+
+.fav {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    border: none;
+    background: none;
+    width: .875rem;
+    height: .875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meal_image-wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.meal_image {
+    position: absolute;
+    top: 1rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.meal_heading_3 {
+    font-size: 1rem;
+}
+
+.meal-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .5rem;
+}
+
+.meal_rate {
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    gap: .25rem;
+}
+
+.meal_price {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price_buy {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: var(--dark-blue);
+    border-radius: 0.375rem;
+}
+
+.price_value {
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1rem, 3vw, 1.125rem);
+    color: var(--dark-blue);
+}
+
+.price_low-opacity {
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: var(--gray);
+}
+
+/* Feature */
+
+.feature {
+    background: var(--background-color);
+    padding: 2.25rem 0;
+}
+
+.feature_notifications {
+    display: flex;
+    flex-direction: column;
+    gap: .625rem;
+    max-width: 14.25rem;
 }
