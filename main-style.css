@@ -27,6 +27,7 @@ header {
     flex-direction: column;
     position: fixed;
     width: 100%;    /* твоя максимальная ширина с десктопа */
+    z-index: 10;
     margin-inline: auto;    /* центрирование (современный аналог margin: 0 auto) */
 }
 
@@ -193,11 +194,24 @@ button {
 .button_blue {
     background: var(--blue);
     color: white;
+    transition: 0.2s ease-in-out;
+}
+
+.button_blue:hover {
+    border: 2px solid #4F8FF0;
+    color: #4F8FF0;
+    background: #FFFFFF;
 }
 
 .button_gray {
     background: var(--white);
     color: var(--black-text);
+    transition: 0.2s ease-in-out;
+}
+
+.button_gray:hover {
+    background: #FFFFFF;
+    border: 2px solid #E6E6E6;
 }
 
 nav {
@@ -206,9 +220,36 @@ nav {
 }
 
 .header_nav-item {
+    position: relative;
     font-weight: 700;
     font-size: 1.125rem;
     color: white;
+    transition: 0.2s ease-in-out;
+    overflow: visible;
+}
+
+.header_nav-item:hover {
+    color: var(--blue);
+}
+
+.header_nav-item::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--blue);
+    transform: scaleX(0);
+    transition: 0.2s ease-in-out;
+}
+
+.header_nav-item:focus {
+    opacity: .9;
+}
+
+.header_nav-item:hover::before {
+    transform: scaleX(1);
 }
 
 .services {
@@ -239,6 +280,62 @@ nav {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    transition: 0.2s ease-in-out;
+    position: relative;
+}
+
+.hover-square {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+}
+
+.border-hover {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.left-top {
+    left: 1rem;
+    top: 1rem;
+}
+
+.right-top {
+    right: 1rem;
+    top: 1rem;
+    rotate: 90deg;
+}
+
+.right-bot {
+    right: 1rem;
+    bottom: 1rem;
+    rotate: 180deg;
+}
+
+.left-bot {
+    left: 1rem;
+    bottom: 1rem;
+    rotate: 270deg;
+}
+
+.services_card:hover {
+    background: #4F8FF0;
+}
+
+.services_card:hover h3 {
+    color: #FFFFFF;
+}
+
+.services_card:hover p {
+    color: #FFFFFF;
+}
+
+.services_card:hover path {
+    fill: #FFFFFF;
 }
 
 .services_card-text {
@@ -247,6 +344,12 @@ nav {
     flex-direction: column;
     align-items: center;
     gap: 0.625rem;
+}
+
+.border-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .heading {
